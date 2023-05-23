@@ -4,7 +4,7 @@ import axios from 'axios';
 const client = new S3Client({});
 
 export const handler = async (event: any) => {
-    console.log('hello world TS - S3 SDK');
+    console.log('hello world TS - S3 SDK - Axios');
 
     const command = new ListBucketsCommand({});
 
@@ -15,7 +15,9 @@ export const handler = async (event: any) => {
             Buckets?.length === 1 ? "" : "s"
           }:`
         );
+
         console.log(`${Buckets?.map((b) => ` • ${b.Name}`).join("\n")}`);
+        
     } catch (err) {
         console.error(err);
     }
